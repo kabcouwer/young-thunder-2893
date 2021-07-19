@@ -7,6 +7,14 @@ class Actor < ApplicationRecord
   end
 
   def self.average_age
-    average(:age).round
+    if all.length == 0
+      return "N/A"
+    else
+      average(:age).round
+    end
   end
+
+  # def self.find_actor(name)
+  #   where("name = ?", name)
+  # end
 end

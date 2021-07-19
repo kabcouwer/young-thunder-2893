@@ -28,4 +28,17 @@ RSpec.describe 'movies show page' do
     expect(actor1.name).to appear_before(actor2.name)
     expect(page).to have_content("Average age of actors: 28")
   end
+
+  it 'has a link to add actor' do
+    studio = Studio.create!(name: 'Universal Studios', location: 'Hollywood')
+    movie1 = studio.movies.create!(title: 'Jurassic Park', creation_year: 1993, genre: 'Adventure')
+
+    visit "/movies/#{movie1.id}"
+
+    expect(page).to have_link("Add Actor")
+
+    click_link("Add Actor")
+
+    expect(current_path).to eq("/movies/#{movie1.id}/actors/new")
+  end
 end

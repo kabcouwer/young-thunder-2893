@@ -1,0 +1,9 @@
+<%= form_with url: "/movies/#{@movie.id}", method: :post, local: true do |form| %>
+<h1>Add Actor:</h1>
+<%= form.label :name, 'Name:' %>
+<%= form.text_field :name %>
+<%= form.label :age, 'Age:' %>
+<%= form.number_field :age %>
+
+<%= form.submit "Submit" %>
+<% end %>

@@ -23,5 +23,11 @@ RSpec.describe Actor do
 
       expect(Actor.average_age).to eq(28)
     end
+
+    # it '.find_actor' do
+    #   actor1 = Actor.create!(name: 'Laura Dern', age: 30)
+    #
+    #   expect(Actor.find_actor('Laura Dern').to eq(actor1)
+    # end
   end
 end
