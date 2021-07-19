@@ -21,7 +21,6 @@ RSpec.describe 'studio index page' do
     expect(page).to have_content("Location: #{studio1.location}")
     expect(page).to have_content(movie1.title)
     expect(page).to have_content(movie2.title)
-
     expect(page).to have_content(studio2.name)
     expect(page).to have_content("Location: #{studio2.location}")
     expect(page).to have_content(movie3.title)
